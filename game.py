@@ -228,7 +228,7 @@ while running:
         screen.blit(badguyimg, badguy)
     # 6.4 - Draw clock
     
-    remaining_ms = 90000 - pygame.time.get_ticks() + paused_time_total
+    remaining_ms = 60000 - pygame.time.get_ticks() + paused_time_total
     minutes = remaining_ms // 60000
     seconds = (remaining_ms // 1000) % 60
     font = pygame.font.Font(None, 50)
@@ -299,7 +299,7 @@ while running:
             playerpos[0]+=5
 
     #10 - Win/Lose check
-    if pygame.time.get_ticks()>=90000+paused_time_total:
+    if pygame.time.get_ticks()>=60000+paused_time_total-500:
         running=0
         exitcode=1
     if healthvalue<=0:
